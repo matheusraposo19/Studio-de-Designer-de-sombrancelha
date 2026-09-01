@@ -1,0 +1,86 @@
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 0;
+}
+
+.logo {
+  flex: 0 1 220px;
+  min-width: 0;
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+}
+
+.header-txt {
+  min-width: 0;
+  text-align: right;
+}
+
+.whatsapp-link {
+  font-size: 1.4rem;
+  display: inline-block;
+  color: var(--text-color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--text-color-tertiary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  color: var(--text-color-tertiary);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+main {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.banner-principal {
+  position: relative;
+  width: 100%;
+}
+
+.banner-principal img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.banner-texto {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+
+  width: 90%;
+  text-align: left;
+  color: var(--text-color-tertiary);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.banner-texto h2 {
+  margin-bottom: 8px;
+  font-size: 122px;
+}
+
+.banner-texto .real {
+  color: white;
+}
+
+.banner-texto p {
+  font-size: 40px;
+}
