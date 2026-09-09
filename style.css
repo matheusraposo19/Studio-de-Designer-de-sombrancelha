@@ -68,13 +68,19 @@ main {
 
   width: 90%;
   text-align: left;
+  line-height: 0.9;
   color: var(--text-color-tertiary);
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+.banner-texto p,
 .banner-texto h2 {
-  margin-bottom: 8px;
-  font-size: 122px;
+  margin: 0;
+  line-height: 1;
+}
+
+.banner-texto h2 {
+  font-size: 100px;
 }
 
 .banner-texto .real {
@@ -126,7 +132,6 @@ main {
   }
 
   .banner-texto h2 {
-    margin-bottom: 4px;
     font-size: clamp(1.8rem, 10vw, 4rem);
   }
 
