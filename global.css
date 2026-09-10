@@ -5,16 +5,20 @@
 }
 
 :root {
-  --brand-color-light:#60A5FA;
-  --brand-color-dark:#1D4ED8;
   --bg-color:#f8f8f8;
-  --stroke-color:#1E293B;
   --text-color-primary:#13001d;
   --text-color-secondary:#CBD5E1;
   --text-color-tertiary:#ff69b4;
 }
 
 body {
+  font-family: "Lato", sans-serif; /* define Lato como fonte padrão */
+  line-height: 1.5; /* melhora a leitura dos textos */
   color: var(--text-color-primary);
   background-color: var(--bg-color);
+}
+
+img {
+  max-width: 100%; /* impede imagens de ultrapassarem o elemento */
+  height: auto; /* mantém a proporção */
 }

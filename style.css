@@ -111,6 +111,54 @@ main {
    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+.cards-container {
+  width: 75%; /* ocupa 75% da largura da tela */
+  max-width: 1200px; /* limita a largura máxima */
+  margin: 0 auto 10px; /* centraliza e cria 10px abaixo */
+  display: grid; /* organiza os cards em grade */
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* cria 3 colunas iguais */
+  gap: 20px; /* espaço entre os cards */
+  padding: 20px; 
+}
+
+
+.beneficios-card,
+.beneficios-card-branco {
+  min-height: 500px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.beneficios-card h3,
+.beneficios-card-branco h3 {
+  font-family: "Cormorant Garamond", serif;
+  color: #7a7a7a;
+  font-size:30px;
+}
+
+.beneficios-card p,
+.beneficios-card-branco p {
+  font-family: "Lato", sans-serif;
+  color: #54595f;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.beneficios-card {
+  background-color: #EEEEEE;
+}
+
+.beneficios-card-branco {
+  background-color: var(--bg-color);
+}
+
+
+
 @media (max-width: 600px) {
   header {
     width: calc(100% - 24px);
@@ -146,5 +194,42 @@ main {
 
   .beneficios h2 {
     font-size: clamp(1rem, 5vw, 1.5rem);
+  }
+
+
+  .cards-container {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* divide a tela em 3 colunas */
+    gap: 6px; /* reduz o espaço entre os cards */
+    padding: 8px; /* reduz o espaço nas laterais */  
+    margin: 0 auto;
+  }
+
+  .beneficios-card,
+  .beneficios-card-branco {
+    width: 100%; /* ocupa toda a largura da coluna */
+    min-width: 0;
+    min-height: 400px;
+    padding: 20px 8px;
+  }
+
+  .beneficios-card img,
+  .beneficios-card-branco img {
+    max-width: 100%; /* impede a imagem de ultrapassar o card */
+    height: auto; /* mantém a proporção da imagem */
+  }
+
+  .beneficios-card h3,
+  .beneficios-card-branco h3 {
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  .beneficios-card p,
+  .beneficios-card-branco p {
+    font-size: 11px;
+    line-height: 1.6;
+    overflow-wrap: break-word;
   }
 }
