@@ -121,6 +121,14 @@ main {
   padding: 20px; 
 }
 
+.beneficios-card img,
+.beneficios-card-branco img {
+  width: 100px; /* define um tamanho consistente para o ícone */
+  height: 100px; /* mantém a área do ícone estável */
+  object-fit: contain; /* preserva o desenho inteiro */
+  filter: sepia(1) saturate(5) hue-rotate(290deg) brightness(1.35)
+        contrast(0.8);
+}
 
 .beneficios-card,
 .beneficios-card-branco {
@@ -132,6 +140,16 @@ main {
   align-items: center;
   gap: 10px;
   justify-content: flex-start;
+  box-shadow: 0 8px 20px rgba(19, 0, 29, 0.08); /* cria profundidade leve */
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* suaviza o hover */
+}
+
+@media (hover: hover) {
+  .beneficios-card:hover,
+  .beneficios-card-branco:hover {
+    transform: translateY(-4px); /* eleva o card ao passar o mouse */
+    box-shadow: 0 12px 26px rgba(19, 0, 29, 0.14); /* reforça a sombra no hover */
+  }
 }
 
 .beneficios-card h3,
@@ -139,6 +157,8 @@ main {
   font-family: "Cormorant Garamond", serif;
   color: #7a7a7a;
   font-size:30px;
+  line-height: 1.1; /* controla a quebra das linhas do título */
+  margin: 0; /* remove espaço padrão do navegador */
 }
 
 .beneficios-card p,
