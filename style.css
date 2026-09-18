@@ -8,6 +8,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 12px 0;
+  font-family: sans-serif;
 }
 
 .logo {
@@ -91,25 +92,6 @@ main {
   font-size: 40px;
 }
 
-.beneficios {
-  width: 100%;
-  height: 100px;
-  margin: 2px 0;  
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: var(--text-color-tertiary);
-}
-
-.beneficios h2 {
-  margin: 0;
-  line-height: 1;
-  color: white;
-
-   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
 
 .cards-container {
   width: 75%; /* ocupa 75% da largura da tela */
@@ -141,7 +123,7 @@ main {
   gap: 10px;
   justify-content: flex-start;
   box-shadow: 0 8px 20px rgba(19, 0, 29, 0.08); /* cria profundidade leve */
-  transition: transform 0.25s ease, box-shadow 0.25s ease; /* suaviza o hover */
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* suaviza o hover e da efeito ao passar mouse */
 }
 
 @media (hover: hover) {
@@ -162,7 +144,9 @@ main {
 }
 
 .beneficios-card p,
-.beneficios-card-branco p {
+.beneficios-card-branco p,
+.mapping-card p,
+.mapping-card-branco p {
   font-family: "Lato", sans-serif;
   color: #54595f;
   font-size: 13px;
@@ -176,6 +160,77 @@ main {
 .beneficios-card-branco {
   background-color: var(--bg-color);
 }
+
+
+
+.mapping-container {
+  /* Mantém a mesma largura geral usada pelos cards de benefícios */
+  width: 75%;
+  max-width: 1200px;
+  margin: 30px auto 60px;
+  padding: 0 20px;
+}
+
+.mapping-grid {
+  /* Usa as mesmas três colunas e o mesmo espaçamento dos benefícios */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Mantém o formato das imagens sob controle em um único lugar */
+.mapping-card img,
+.mapping-card-branco img {
+  display: block;
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #f8c8dc;
+  box-shadow: 0 4px 12px rgba(19, 0, 29, 0.15);
+}
+
+.mapping-card,
+.mapping-card-branco {
+  min-height: 500px;
+  min-width: 0;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  box-shadow: 0 8px 20px rgba(19, 0, 29, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mapping-card {
+  background-color: #EEEEEE;
+}
+
+.mapping-card-branco {
+  background-color: var(--bg-color);
+}
+
+.mapping-card h3,
+.mapping-card-branco h3 {
+  margin: 0;
+  color: #7a7a7a;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+@media (hover: hover) {
+  .mapping-card:hover,
+  .mapping-card-branco:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(19, 0, 29, 0.14);
+  }
+}
+
 
 
 
@@ -207,12 +262,12 @@ main {
     font-size: clamp(0.75rem, 4vw, 1.1rem);
   }
 
-  .beneficios {
+  .faixa {
     height: 60px;
     padding: 0 10px;
   }
 
-  .beneficios h2 {
+  .faixa h2 {
     font-size: clamp(1rem, 5vw, 1.5rem);
   }
 
@@ -220,9 +275,9 @@ main {
   .cards-container {
     width: 100%;
     max-width: 100%;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /* divide a tela em 3 colunas */
-    gap: 6px; /* reduz o espaço entre os cards */
-    padding: 8px; /* reduz o espaço nas laterais */  
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 8px;
     margin: 0 auto;
   }
 
@@ -247,9 +302,35 @@ main {
   }
 
   .beneficios-card p,
-  .beneficios-card-branco p {
+  .beneficios-card-branco p,
+  .mapping-card p,
+  .mapping-card-branco p {
     font-size: 11px;
     line-height: 1.6;
     overflow-wrap: break-word;
+  }
+
+  .mapping-grid {
+    /* No celular, os cards ocupam a mesma largura da seção de benefícios */
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .mapping-card,
+  .mapping-card-branco {
+    width: min(320px, 100%);
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  .mapping-card img,
+  .mapping-card-branco img {
+    width: min(260px, 100%);
+    margin: 0 auto;
+  }
+
+  .mapping-card h3,
+  .mapping-card-branco h3 {
+    font-size: 24px;
   }
 }
