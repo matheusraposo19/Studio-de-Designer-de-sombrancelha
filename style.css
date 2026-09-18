@@ -275,8 +275,9 @@ main {
   .cards-container {
     width: 100%;
     max-width: 100%;
-    grid-template-columns: 1fr;
-    gap: 12px;
+    /* Mantém os três cards de benefícios lado a lado no celular */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
     padding: 8px;
     margin: 0 auto;
   }
@@ -311,7 +312,7 @@ main {
   }
 
   .mapping-grid {
-    /* No celular, os cards ocupam a mesma largura da seção de benefícios */
+    /* Mantém os cards de mapping empilhados no celular */
     grid-template-columns: 1fr;
     gap: 12px;
   }
