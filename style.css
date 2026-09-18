@@ -33,20 +33,48 @@ header {
 }
 
 .whatsapp-link {
-  font-size: 1.4rem;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
   color: var(--text-color-primary);
-  text-decoration: underline;
-  text-decoration-color: var(--text-color-tertiary);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.whatsapp-label {
+  color: #7a7a7a;
+  font-family: "Lato", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.whatsapp-action {
+  position: relative;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.whatsapp-action::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  margin-top: 6px;
+  margin-left: auto;
+  background-color: var(--text-color-tertiary);
 }
 
 .whatsapp-link:hover {
   color: var(--text-color-tertiary);
-  opacity: 1;
   transform: translateY(-2px);
+}
+
+.whatsapp-link:hover .whatsapp-label {
+  color: var(--text-color-tertiary);
 }
 /* =========================
   MAIN
@@ -190,7 +218,6 @@ main {
   gap: 20px;
 }
 
-/* Mantém o formato das imagens sob controle em um único lugar */
 .mapping-card img,
 .mapping-card-branco img {
   display: block;
@@ -235,6 +262,197 @@ main {
   line-height: 1.1;
 }
 
+/* =========================
+  MODELOS DE EXTENSOES
+========================= */
+
+.modelos-container {
+  width: 100%;
+  margin: 30px 0 60px;
+  padding: 0 20px;
+}
+
+.modelos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.modelo-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  gap: 30px;
+  align-items: center;
+  padding: 24px;
+  background-color: #eeeeee;
+  border-left: 5px solid #f8c8dc;
+  box-shadow: 0 8px 20px rgba(19, 0, 29, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.modelo-item:nth-child(even) {
+  background-color: var(--bg-color);
+  border-left: 0;
+  border-right: 5px solid #f8c8dc;
+}
+
+.modelo-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(19, 0, 29, 0.15);
+}
+
+.modelo-info {
+  padding: 10px;
+}
+
+
+.modelo-info h3 {
+  margin: 6px 0;
+  color: #7a7a7a;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.modelo-info h3::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 3px;
+  margin-top: 10px;
+  background-color: var(--text-color-tertiary);
+}
+
+.modelo-destaque {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--text-color-tertiary);
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.modelo-info p {
+  max-width: 360px;
+  margin: 0;
+  color: #54595f;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.modelo-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--text-color-primary);
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--text-color-tertiary);
+  text-underline-offset: 5px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.modelo-link:hover {
+  color: var(--text-color-tertiary);
+  transform: translateX(3px);
+}
+
+/* =========================
+  RODAPE
+========================= */
+
+.site-footer {
+  width: 100%;
+  margin-top: 30px;
+  padding: 42px 20px 34px;
+  border-top: 1px solid #f8c8dc;
+  background-color: var(--bg-color);
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 16px;
+}
+
+.footer-message {
+  margin: 6px 0 18px;
+  color: #54595f;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #f8c8dc;
+  border-radius: 50%;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.social-link img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--text-color-tertiary);
+}
+
+.footer-copy {
+  margin: 28px 0 0;
+  color: #7a7a7a;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+}
+
+.footer-creator {
+  margin: 6px 0 4px;
+  color: #9a9a9a;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+}
+
+.fox-icon {
+  display: inline-block;
+  margin-right: 3px;
+  font-size: 13px;
+  line-height: 1;
+  vertical-align: -1px;
+}
+
+.footer-creator strong {
+  color: #7a7a7a;
+  font-weight: 700;
+}
+
 
 
 /* =========================
@@ -252,7 +470,20 @@ main {
   }
 
   .whatsapp-link {
-    font-size: clamp(0.75rem, 3.2vw, 1rem);
+    gap: 3px;
+  }
+
+  .whatsapp-label {
+    font-size: 0.52rem;
+  }
+
+  .whatsapp-action {
+    font-size: 1.15rem;
+  }
+
+  .whatsapp-action::after {
+    width: 24px;
+    margin-top: 5px;
   }
 
   .banner-texto {
@@ -282,7 +513,6 @@ main {
   .cards-container {
     width: 100%;
     max-width: 100%;
-    /* Mantém os três cards de benefícios lado a lado no celular */
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
     padding: 8px;
@@ -326,7 +556,6 @@ main {
   }
 
   .mapping-grid {
-    /* Mantém os três cards de mapping lado a lado no celular */
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
   }
@@ -351,6 +580,90 @@ main {
   .mapping-card-branco h3 {
     font-size: 20px;
   }
+
+  .modelos-container {
+    padding: 0 8px;
+  }
+
+  .modelo-item {
+    grid-template-columns: 50% 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .modelo-info h3 {
+    margin-bottom: 6px;
+    font-size: 20px;
+  }
+
+  .modelo-info h3::after {
+    width: 35px;
+    height: 2px;
+    margin-top: 6px;
+  }
+
+  .modelo-info p {
+    max-width: none;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .modelo-info {
+    padding: 4px;
+  }
+
+  .modelo-destaque {
+    margin-bottom: 8px;
+    font-size: 10px;
+  }
+
+  .modelo-link {
+    margin-top: 10px;
+    font-size: 10px;
+  }
+
+  .site-footer {
+    margin-top: 20px;
+    padding: 32px 12px 26px;
+  }
+
+  .footer-logo {
+    width: 180px;
+    margin-bottom: 12px;
+  }
+
+  .footer-message {
+    font-size: 12px;
+  }
+
+  .footer-socials {
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .social-link {
+    width: 34px;
+    height: 34px;
+  }
+
+  .social-link img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .footer-copy {
+    margin-top: 22px;
+    font-size: 10px;
+  }
+
+  .footer-creator {
+    margin-top: 4px;
+    font-size: 10px;
+  }
+
+  .fox-icon {
+    font-size: 12px;
+  }
 }
 
 /* =========================
@@ -362,6 +675,11 @@ main {
   .beneficios-card-branco:hover,
   .mapping-card:hover,
   .mapping-card-branco:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(19, 0, 29, 0.14);
+  }
+
+  .modelo-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 26px rgba(19, 0, 29, 0.14);
   }
