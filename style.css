@@ -1,4 +1,8 @@
 
+/* =========================
+  HEADER
+========================= */
+
 header {
   display: flex;
   align-items: center;
@@ -44,11 +48,19 @@ header {
   opacity: 1;
   transform: translateY(-2px);
 }
+/* =========================
+  MAIN
+========================= */
+
 main {
   width: 100%;
   max-width: none;
   margin: 0;
 }
+
+/* =========================
+  BANNER PRINCIPAL
+========================= */
 
 .banner-principal {
   position: relative;
@@ -93,6 +105,10 @@ main {
 }
 
 
+/* =========================
+  CARDS DE BENEFICIOS
+========================= */
+
 .cards-container {
   width: 75%; /* ocupa 75% da largura da tela */
   max-width: 1200px; /* limita a largura máxima */
@@ -126,14 +142,6 @@ main {
   transition: transform 0.25s ease, box-shadow 0.25s ease; /* suaviza o hover e da efeito ao passar mouse */
 }
 
-@media (hover: hover) {
-  .beneficios-card:hover,
-  .beneficios-card-branco:hover {
-    transform: translateY(-4px); /* eleva o card ao passar o mouse */
-    box-shadow: 0 12px 26px rgba(19, 0, 29, 0.14); /* reforça a sombra no hover */
-  }
-}
-
 .beneficios-card h3,
 .beneficios-card-branco h3 {
   font-family: "Cormorant Garamond", serif;
@@ -162,6 +170,10 @@ main {
 }
 
 
+
+/* =========================
+  MAPPING
+========================= */
 
 .mapping-container {
   /* Mantém a mesma largura geral usada pelos cards de benefícios */
@@ -223,16 +235,11 @@ main {
   line-height: 1.1;
 }
 
-@media (hover: hover) {
-  .mapping-card:hover,
-  .mapping-card-branco:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 26px rgba(19, 0, 29, 0.14);
-  }
-}
 
 
-
+/* =========================
+  RESPONSIVIDADE MOBILE
+========================= */
 
 @media (max-width: 600px) {
   header {
@@ -282,6 +289,13 @@ main {
     margin: 0 auto;
   }
 
+  .mapping-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 8px;
+  }
+
   .beneficios-card,
   .beneficios-card-branco {
     width: 100%; /* ocupa toda a largura da coluna */
@@ -321,6 +335,7 @@ main {
   .mapping-card-branco {
     /* Faz cada card ocupar somente o espaço da sua coluna */
     width: 100%;
+    min-height: 400px;
     margin: 0;
     padding: 20px 8px;
   }
@@ -335,5 +350,19 @@ main {
   .mapping-card h3,
   .mapping-card-branco h3 {
     font-size: 20px;
+  }
+}
+
+/* =========================
+  EFEITOS HOVER
+========================= */
+
+@media (hover: hover) {
+  .beneficios-card:hover,
+  .beneficios-card-branco:hover,
+  .mapping-card:hover,
+  .mapping-card-branco:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(19, 0, 29, 0.14);
   }
 }
