@@ -1,5 +1,4 @@
 # Beauty Studio Landing Page
-<img width="1200" alt="Preview do projeto" src="./assets/images/preview.png" />
 
 Landing page elegante e responsiva para apresentação de serviços de beleza e extensão de cílios.
 
