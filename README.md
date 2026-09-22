@@ -1,5 +1,8 @@
 # Beauty Studio Landing Page
-<img width="397" height="707" alt="image" src="https://github.com/user-attachments/assets/52e7974d-b8a4-4b1b-acef-c6119b090fe1" />
+<p align="center">
+  <img src="./assets/preview/preview.png" alt="Preview do projeto" width="900">
+</p>
+
 
 Uma landing page elegante e responsiva para apresentação de serviços de beleza e extensões de cílios.
 
